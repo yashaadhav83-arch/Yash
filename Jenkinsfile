@@ -22,5 +22,15 @@ pipeline {
                 sh 'java Yash'
             }
         }
+	stage('Build Docker Image') {
+	    steps {
+		sh 'docker build -t java-hello-world:latest .'
+	    }
+	}
+	stage('Run and Verify Container') {
+	    steps {
+		sh 'docker run --rm java-hello-world:latest'
+	    }
+	}
     }
 }
