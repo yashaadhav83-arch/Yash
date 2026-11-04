@@ -12,14 +12,14 @@ pipeline {
         stage('Compile') {
             steps {
              
-                sh 'javac HelloWorld.java'
+                sh 'javac Yash.java'
             }
         }
 
         stage('Execute') {
             steps {
      
-                sh 'java HelloWorld'
+                sh 'java Yash'
             }
         }
     }
