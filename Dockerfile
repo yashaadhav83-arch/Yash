@@ -1,4 +1,4 @@
-FROM openjdk:28-ea-nanoserver-ltsc2025
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY Yash .
 RUN javac Yash.java
