@@ -43,9 +43,17 @@ pipeline {
 		    }
 		}
 	   }
-	    
-	
-
+	    stage('Deploy to Kubernetes') {
+		steps {
+		    sh 'kubectl apply -f deployment.yaml'
+		}
+	    }
+	    stage('Verify Kubernetes Deployment') {
+		steps {
+		sh 'kubectl rollout status deployment/java-hello-world-deployment'
+		sh 'kubectl get pods -l app=java-hello-world'
+	    }
+	}
     }
 }
 
