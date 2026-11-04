@@ -1,4 +1,4 @@
-FROM openjdk:28-ea-nanoserver-ltsc2025
+FROM openjdk:21-slim
 WORKDIR /app
 COPY Yash .
 RUN javac Yash.java
